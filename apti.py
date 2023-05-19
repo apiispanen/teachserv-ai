@@ -53,6 +53,22 @@ y_pred = model.predict(X_test)
 mse = mean_squared_error(y_test, y_pred)
 print(f"Mean Squared Error: {mse}")
 
+
+# Get feature importances
+importances = model.feature_importances_
+
+# Create a DataFrame for visualization
+importances_df = pd.DataFrame({
+    'Feature': X.columns,
+    'Importance': importances
+})
+
+# Sort the DataFrame by importance in descending order
+importances_df = importances_df.sort_values(by='Importance', ascending=False)
+
+# Print the feature importances
+print(importances_df)
+
 def predict_output(professor_credentials, topics_covered, price, student_feedback, student_success_rate, difficulty, gpa, awards):
     # Preprocess the input
     input_data = pd.DataFrame({
@@ -80,7 +96,6 @@ def predict_output(professor_credentials, topics_covered, price, student_feedbac
 # - Difficulty (1-5)
 # - GPA (0-4)
 # - # Awards 
-
 
 output = predict_output(2, 7, 200, 4.5, 0.85, 3, 3.5, 1)
 print(f"Predicted Output: {output}")
