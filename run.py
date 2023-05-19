@@ -52,7 +52,7 @@ y_pred = model.predict(X_test)
 
 # Evaluate the model
 mse = mean_squared_error(y_test, y_pred)
-st.image("http://app.teachserv.com/wp-content/uploads/2023/04/imageedit_1_3185355754.png", width=80)
+st.image("ts.png", width=80)
 st.title("Teachserv AI Generator")
 st.subheader("A Predictive Model for APTI Scoring")
 st.write("""
