@@ -32,7 +32,7 @@ def generate_random_training():
     st.write(df)
 
 # Load the data
-df = pd.read_csv('C:\\Users\\appii\\Google Drive\\Projects\\teachserv\\teachserv-ai\\training_data.csv')
+df = pd.read_csv('training_data.csv')
 
 # Split the data into inputs and outputs
 X = df.drop('Output', axis=1)
